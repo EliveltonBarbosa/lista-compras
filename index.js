@@ -1,3 +1,7 @@
+const saveButton = document.getElementById("adicionar-item");
 const inputItem = document.getElementById("input-item")
 
-console.log(inputItem.value);
+saveButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log(inputItem.value);
+});
