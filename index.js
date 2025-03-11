@@ -44,4 +44,21 @@ saveButton.addEventListener("click", (event) => {
     textoData.classList.add("texto-data");
     textoData.innerText = dataCompleta;
     itemLista.appendChild(textoData);
+
+    inputItem.value = ""
+    
+    verificarListaVazia();
 });
+
+const mensagemListaVazia = document.querySelector(".mensagem-lista-vazia");
+
+function verificarListaVazia() {
+    const itensDaLista = listaDeCompras.querySelectorAll("li");
+    if (itensDaLista.length === 0) {
+        mensagemListaVazia.style.display = "block"
+    } else {
+        mensagemListaVazia.style.display = "none"
+    }
+}
+
+verificarListaVazia();
