@@ -18,6 +18,14 @@ saveButton.addEventListener("click", (event) => {
     const itemText = document.createElement("p");
     itemText.innerText = inputItem.value;
 
+    inputCheckbox.addEventListener("click", () => {
+        if (inputCheckbox.checked) {
+            itemText.style.textDecoration = "line-through";
+        } else {
+            itemText.style.textDecoration = "none";
+        }
+    });
+
     containerItemLista.appendChild(inputCheckbox);
     containerItemLista.appendChild(itemText)
 
