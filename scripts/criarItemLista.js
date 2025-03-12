@@ -1,3 +1,6 @@
+import gerarData from "./gerarData.js";
+
+
 const inputItem = document.getElementById("input-item")
 let contador = 0;
 
@@ -29,25 +32,13 @@ export function criarItemLista() {
 
     itemLista.appendChild(containerItemLista)
 
-    const textoData = criarTextoData();
+    const dataCompleta = gerarData();
+    const textoData = document.createElement("p");
+    textoData.classList.add("texto-data");
+    textoData.innerText = dataCompleta;
     itemLista.appendChild(textoData);
 
     inputItem.value = ""
 
     return itemLista;
-}
-
-function criarTextoData() {
-    const diaDaSemana = new Date().toLocaleDateString("pt-BR", { weekday: "long" })
-        .charAt(0)
-        .toUpperCase() + new Date().toLocaleDateString("pt-BR", { weekday: "long" })
-        .slice(1);
-    const data = new Date().toLocaleDateString("pt-BR");
-    const hora = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-    const dataCompleta = `${diaDaSemana} (${data}) às ${hora}`;
-
-    const textoData = document.createElement("p");
-    textoData.classList.add("texto-data");
-    textoData.innerText = dataCompleta;
-    return textoData;
 }
