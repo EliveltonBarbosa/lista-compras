@@ -28,9 +28,9 @@ export function criarItemLista() {
     });
 
     containerItemLista.appendChild(inputCheckbox);
-    containerItemLista.appendChild(itemText)
+    containerItemLista.appendChild(itemText);
 
-    itemLista.appendChild(containerItemLista)
+    itemLista.appendChild(containerItemLista);
 
     const dataCompleta = gerarData();
     const textoData = document.createElement("p");
@@ -38,7 +38,7 @@ export function criarItemLista() {
     textoData.innerText = dataCompleta;
     itemLista.appendChild(textoData);
 
-    inputItem.value = ""
+    inputItem.value = "";
 
     return itemLista;
 }
